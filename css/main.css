@@ -1,0 +1,19 @@
+.board {
+  margin:20px auto;
+  width:600px;
+}
+.row {
+  clear:both;
+  display:flex;
+  height:200px;
+}
+.square {
+  width:200px;
+  height:200px;
+  border:2px #000 solid;
+  margin: auto;
+  font-size:85pt;
+  text-align:center;
+  line-height:175px;
+  font-family: 'Indie Flower', cursive;
+}
