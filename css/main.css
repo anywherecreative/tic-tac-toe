@@ -16,4 +16,8 @@
   text-align:center;
   line-height:175px;
   font-family: 'Indie Flower', cursive;
+  cursor:pointer;
+}
+.square.used {
+  cursor:not-allowed;
 }
