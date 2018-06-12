@@ -21,3 +21,24 @@
 .square.used {
   cursor:not-allowed;
 }
+.win {
+  display:none;
+}
+.win H1 {
+    font-family: 'Indie Flower', cursive;
+    font-size:100pt;
+    text-align:center;
+    margin-top:0;
+    padding-top:0;
+}
+.win IMG {
+  display:block;
+  margin: 5% auto; /* Will not center vertically and won't work in IE6/7. */
+  left: 0;
+  right: 0;
+  bottom:0;
+  margin:0 auto;
+  max-width:70%;
+  max-height:70%;
+  position:fixed;
+}

@@ -19,12 +19,13 @@ $(document).ready(function() {
 
 function checkWin() {
   //check horizontal
+  var win = false;
   $('.row').each(function() {
     if($(".X",this).length == 3) {
-      alert('X wins!');
+      win = "X";
     }
     if($(".O",this).length == 3) {
-      alert('O wins!');
+      win = "O";
     }
   })
 
@@ -34,15 +35,14 @@ function checkWin() {
        $(".row:nth-child(2) .square:nth-child(" + a + ")").hasClass('O') &&
        $(".row:nth-child(3) .square:nth-child(" + a + ")").hasClass('O')
      ) {
-       alert('O wins!');
-       break;
+       win = "O";
      }
 
      if($(".row:nth-child(1) .square:nth-child(" + a + ")").hasClass('X') &&
         $(".row:nth-child(2) .square:nth-child(" + a + ")").hasClass('X') &&
         $(".row:nth-child(3) .square:nth-child(" + a + ")").hasClass('X')
       ) {
-        alert('X wins!');break;
+        win = "X";
       }
     }
 
@@ -51,13 +51,13 @@ function checkWin() {
       $(".row:nth-child(2) .square:nth-child(2)").hasClass('O') &&
       $(".row:nth-child(3) .square:nth-child(3)").hasClass('O')
       ) {
-        alert('O wins!');
+        win = "O";
     }
     if($(".row:nth-child(3) .square:nth-child(1)").hasClass('O') &&
       $(".row:nth-child(2) .square:nth-child(2)").hasClass('O') &&
       $(".row:nth-child(1) .square:nth-child(3)").hasClass('O')
       ) {
-        alert('O wins!');
+          win = "O";
     }
 
     //check diagonal
@@ -65,12 +65,19 @@ function checkWin() {
       $(".row:nth-child(2) .square:nth-child(2)").hasClass('X') &&
       $(".row:nth-child(3) .square:nth-child(3)").hasClass('X')
       ) {
-        alert('O wins!');
+          win = "X";
     }
     if($(".row:nth-child(3) .square:nth-child(1)").hasClass('X') &&
       $(".row:nth-child(2) .square:nth-child(2)").hasClass('X') &&
       $(".row:nth-child(1) .square:nth-child(3)").hasClass('X')
       ) {
-        alert('O wins!');
+          win = "X";
+    }
+    if(win !== false) {
+      $('.board').hide();
+      $('.win').show(10,function() {
+        $('.win H1').text(win + " WINS!");
+      });
+
     }
   }
