@@ -14,6 +14,7 @@ $(document).ready(function() {
       currentPlayer = "O"
     }
     checkWin();
+    checkStale();
   })
 });
 
@@ -79,5 +80,14 @@ function checkWin() {
         $('.win H1').text(win + " WINS!");
       });
 
+    }
+  }
+
+  function checkStale() {
+    if($('.board').is(":visible") && $('.used').length == 9) {
+       $('.board').hide();
+        $('.stale').show(10,function() {
+        $('.stale H1').text("Stale Mate!");
+      });
     }
   }
